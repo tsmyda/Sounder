@@ -20,7 +20,7 @@ Ensure that CMake, Qt, and FFTW are installed on your system. You can install th
 
 1. Clone the repository:
     ```
-    git clone <repository-url>
+    git clone https://github.com/tsmyda/Sounder
     cd Sounder
     ```
 
@@ -41,12 +41,7 @@ Ensure that CMake, Qt, and FFTW are installed on your system. You can install th
     make
     ```
 
-5. Install the application:
-    ```
-    make install
-    ```
-
 ## Usage
 
 After installation, you can run the Sounder application from the installed location. The application provides a GUI for processing real time audio stream, including features such as visualizing frequency maps, applying custom plots, and recognizing the closest sound to the input sound. This feature can be particularly useful for tuning musical instruments.
-
+![Sounder](./image.png)
