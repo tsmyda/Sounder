@@ -1,79 +1,52 @@
 # Sounder
 
-Sounder to aplikacja napisana w C++ używająca biblioteki Qt oraz FFTW do przetwarzania i wizualizacji danych dźwiękowych. Może posłużyć do strojenia instrumentów.
+## Overview
 
-## Minimalne Wymagania
+Sounder is a Qt-based application designed to provide audio processing capabilities. It leverages the Qt framework for its GUI components and FFTW for its Fast Fourier Transform computations.
 
-### System operacyjny
-- Windows, macOS, Linux
+## Requirements
 
-### Kompilator
-- Kompatybilny z C++17
+- **CMake** version 3.5 or higher
+- **Qt** version 6, with the required components: Widgets, Multimedia and PrintSupport
+- **FFTW** version 3
 
-### Narzędzia budowania
-- CMake w wersji 3.5 lub nowszej
+## Installation
 
-### Biblioteki
-- Qt6 z komponentami:
-  - Widgets
-  - Multimedia
-  - PrintSupport
-- FFTW3 (Fastest Fourier Transform in the West)
+### Prerequisites
 
-## Instalacja
+Ensure that CMake, Qt, and FFTW are installed on your system. You can install these dependencies using your package manager or from their official websites.
 
-### Krok 1: Zainstaluj wymagane pakiety
+### Building Sounder
 
-#### Windows
-1. [Pobierz i zainstaluj Qt](https://www.qt.io/download-qt-installer)
-2. Zainstaluj FFTW3, np. przez [vcpkg](https://github.com/microsoft/vcpkg):
-    ```sh
-    vcpkg install fftw3
+1. Clone the repository:
     ```
-
-#### macOS
-1. Zainstaluj Qt przez [Homebrew](https://brew.sh/):
-    ```sh
-    brew install qt
-    ```
-2. Zainstaluj FFTW3:
-    ```sh
-    brew install fftw
-    ```
-
-#### Linux (Ubuntu)
-1. Zainstaluj Qt:
-    ```sh
-    sudo apt-get install qt5-default qttools5-dev-tools
-    ```
-2. Zainstaluj FFTW3:
-    ```sh
-    sudo apt-get install libfftw3-dev
-    ```
-
-### Krok 2: Skonfiguruj i zbuduj projekt
-
-1. Sklonuj repozytorium:
-    ```sh
-    git clone <URL_do_repozytorium>
+    git clone <repository-url>
     cd Sounder
     ```
-2. Utwórz katalog build i przejdź do niego:
-    ```sh
+
+2. Create a build directory and navigate into it:
+    ```
     mkdir build
     cd build
     ```
-3. Skonfiguruj projekt przy użyciu CMake:
-    ```sh
-    cmake ..
+
+3. Configure the project with CMake:
     ```
-4. Zbuduj projekt:
-    ```sh
-    cmake --build .
+    cmake -DCMAKE_PREFIX_PATH=/path/to/your/qt  ..
+    (e.g. cmake -DCMAKE_PREFIX_PATH=/home/foo/Qt/6.7.1/gcc_64 ..)
     ```
 
-## Uruchamianie aplikacji
+4. Build the project:
+    ```
+    make
+    ```
 
-Po zakończeniu budowania, uruchom aplikację z katalogu build:
-```sh
-./Sounder
+5. Install the application:
+    ```
+    make install
+    ```
+
+## Usage
+
+After installation, you can run the Sounder application from the installed location. The application provides a GUI for processing real time audio stream, including features such as visualizing frequency maps, applying custom plots, and recognizing the closest sound to the input sound. This feature can be particularly useful for tuning musical instruments.
+
